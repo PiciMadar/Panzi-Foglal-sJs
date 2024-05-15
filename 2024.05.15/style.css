@@ -20,3 +20,19 @@ body{
     margin-top: 5%;
     margin-bottom: 5%;
 }
+
+input[type="datetime"]{
+    width: 70%;
+}
+
+.flexdiv{
+    display: flex;
+}
+
+.labeldiv{
+    width: 30%;
+}
+
+.inputdiv{
+    width: 50%;
+}
