@@ -11,28 +11,93 @@
         <h1>Panzió - szobafoglalás</h1>
         <div class="container">
             <hr>
-            <div class="datumokDiv">
-                a
+            <div class="datumokDiv flexdiv" >
+                <div class="labeldiv">
+                    <label for="erkezesdate">Érkezés dátuma:</label>
+                    <br>
+                    <label for="tavozasdate">Távozás dátuma:</label>
+                </div>
+                <div class="inputdiv">
+                    <input type="datetime" name="erkezesdate" placeholder="éééé.hh.nn." id="erkezesdateid">
+                    <br>
+                    <input type="datetime" name="tavozasdate" placeholder="éééé.hh.nn." id="tavozasdateid">
+                </div>  
             </div>
             <hr>
-            <div class="tipusDiv">
-                b
+            <div class="tipusDiv flexdiv">
+                <div class="labeldiv kozeplabel">
+                    <label for="">Szoba típusa:</label>
+                </div>
+                <div class="inputdiv tinputd">
+                    <input type="radio" name="tradio" id="tradio0id">
+                    <label for="tradio0">Egyágyas - 9.000 Ft/éj</label><br>
+                    <input type="radio" name="tradio" id="tradio1id">
+                    <label for="tradio0">Kétágyas - 15.000 Ft/éj</label><br>
+                    <input type="radio" name="tradio" id="tradio2id">
+                    <label for="tradio0">Kétágyas 1 pótággyal - 18.000 Ft/éj</label><br>
+                    <input type="radio" name="tradio" id="tradio3id">
+                    <label for="tradio0">Kétágyas 2 pótággyal - 21.000 Ft/éj</label><br>
+                </div>
             </div>
             <hr>
-            <div class="eletkorokDiv">
-                c
+            <div class="eletkorokDiv flexdiv">
+                <div class="labeldiv">
+                    <label for="">Vendégek száma:</label>
+                    <label for="">Vendégek életkora:</label>
+                </div>
+                <div class="inputdiv">
+                    <input type="number" name="" id=""> 
+                    <label for="">fő</label><br>
+                    <input type="number" name="" id="">
+                    <label for="">év</label>
+                    <input type="number" name="" id="">
+                    <label for="">év</label>
+                    <input type="number" name="" id="">
+                    <label for="">év</label>
+                    <input type="number" name="" id="">
+                    <label for="">év</label>
+                
+                </div>
             </div>
             <hr>
-            <div class="ellatasDiv">
-                d
+            <div class="ellatasDiv flexdiv">
+                <div class="labeldiv kozeplabel">
+                    <label for="">Ellátás:</label>
+                </div>
+                <div class="inputdiv">
+                    <input type="radio" name="iradio" id="iradio0id">
+                    <label for="iradio0">Reggeli - 900 Ft/nap/fő</label><br>
+                    <input type="radio" name="iradio" id="iradio1id">
+                    <label for="iradio0">Félpanzió - 2.900 Ft/nap/fő</label><br>
+                    <input type="radio" name="iradio" id="iradio2id">
+                    <label for="iradio0">Teljes panzió - 4.900 Ft/nap/fő</label><br>
+                
+                </div>
             </div>
             <hr>
-            <div class="szolgaltatasokDiv">
-                e
+            <div class="szolgaltatasokDiv flexdiv">
+                <div class="labeldiv kozeplabel">
+                    <label for="">Fürdő szolgáltatások:</label>
+                </div>
+                <div class="inputdiv">
+                    <input type="checkbox" name="cb0" id="cb0id">
+                    <label for="cb0">Beltéri medencék - 800 Ft/nap/fő</label><br>
+                    <input type="checkbox" name="cb0" id="cb0id">
+                    <label for="cb0">Kültéri medencék - 800 Ft/nap/fő</label><br>
+                    <input type="checkbox" name="cb0" id="cb0id">
+                    <label for="cb0">Szauna belépő - 800 Ft/nap/fő</label><br>
+                    <input type="checkbox" name="cb0" id="cb0id">
+                    <label for="cb0">Teljes belépő - 2.000 Ft/nap/fő</label><br>
+                </div>
             </div>
             <hr>
-            <div class="egyebDiv">
-                f
+            <div class="egyebDiv flexdiv">
+                <div class="labeldiv kozeplabel">
+                    Egyéb kérdés, kívánság:
+                </div>
+                <div class="inputdiv">
+                    <textarea name="" id="" cols="30" rows="10" ></textarea>
+                </div>
             </div>
             <hr>
         </div>
