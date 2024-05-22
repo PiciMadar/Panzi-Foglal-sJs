@@ -29,13 +29,13 @@
                     <label for="">Szoba típusa:</label>
                 </div>
                 <div class="inputdiv tinputd">
-                    <input type="radio" name="tradio" id="tradio0id">
+                    <input type="radio" name="tradio" id="tradio0id" class="tradiok">
                     <label for="tradio0">Egyágyas - 9.000 Ft/éj</label><br>
-                    <input type="radio" name="tradio" id="tradio1id">
+                    <input type="radio" name="tradio" id="tradio1id" class="tradiok">
                     <label for="tradio0">Kétágyas - 15.000 Ft/éj</label><br>
-                    <input type="radio" name="tradio" id="tradio2id">
+                    <input type="radio" name="tradio" id="tradio2id" class="tradiok">
                     <label for="tradio0">Kétágyas 1 pótággyal - 18.000 Ft/éj</label><br>
-                    <input type="radio" name="tradio" id="tradio3id">
+                    <input type="radio" name="tradio" id="tradio3id" class="tradiok">
                     <label for="tradio0">Kétágyas 2 pótággyal - 21.000 Ft/éj</label><br>
                 </div>
             </div>
@@ -46,15 +46,15 @@
                     <label for="">Vendégek életkora:</label>
                 </div>
                 <div class="inputdiv">
-                    <input type="number" name="" id=""> 
+                    <input type="number" min="1" placeholder="1" max="4" id="fonumberdiv" oninput="fovaltozas()"> 
                     <label for="">fő</label><br>
-                    <input type="number" name="" id="">
+                    <input type="number" min="0" placeholder="1" max="100" name="" id="evid0" class="evclass" disabled>
                     <label for="">év</label>
-                    <input type="number" name="" id="">
+                    <input type="number" min="0" placeholder="1" max="100" name="" id="evid1" class="evclass" disabled>
                     <label for="">év</label>
-                    <input type="number" name="" id="">
+                    <input type="number" min="0" placeholder="1" max="100" name="" id="evid2" class="evclass" disabled>
                     <label for="">év</label>
-                    <input type="number" name="" id="">
+                    <input type="number" min="0" placeholder="1" max="100" name="" id="evid3" class="evclass" disabled>
                     <label for="">év</label>
                 
                 </div>
@@ -101,7 +101,7 @@
             </div>
             <hr>
         </div>
-        <button>Költségkalkuláció</button>
+        <button onclick="vizsgalas()">Költségkalkuláció</button>
     </div>
     <script src="script.js"></script>
 </body>
