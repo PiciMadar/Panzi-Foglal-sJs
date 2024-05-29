@@ -73,7 +73,7 @@ function vizsgalas(){
     }
 
     else{
-        kalkulacio();
+        kalkulacio(vendegek);
     }
 }
 
@@ -81,13 +81,26 @@ function vizsgalas(){
 
 
 
-function kalkulacio(){
+function kalkulacio(vendegek){
     let osszeg = 0;
 
 
     let erkezes = new Date(document.getElementById("erkezesdateid").value);
     let tavozas = new Date(document.getElementById("tavozasdateid").value);
-   
+
+
+
+    let erkev = erkezes.getFullYear()
+    let erkho = erkezes.getMonth()
+    let erknap = erkezes.getDay()
+
+    let tavev = tavozas.getFullYear()
+    let tavho = tavozas.getMonth()
+    let tavnap = tavozas.getDay()
+
+    let erkstring = erkev + "." + erkho + "." + erknap + "."
+    let tavstring = tavev + "." + tavho + "." + tavnap + "."
+    
     let kulomb = tavozas.getTime() - erkezes.getTime();
     let elteltnapok = Math.round(kulomb / (1000 * 3600 * 24))
 
@@ -97,20 +110,25 @@ function kalkulacio(){
 
 
     // Szoba típusa radio gombok
+    let szobatip = "";
     for(let i = 0; i < document.getElementsByClassName("tradiok").length; i++){
         if(document.getElementsByClassName("tradiok")[i].checked){
             switch(i){
                 case 0 :
                 osszeg += 9000 * elteltnapok
+                szobatip = "Egyágyas"
                 break;
                 case 1 :
                 osszeg += 15000 * elteltnapok
+                szobatip = "Kétágyas"
                 break;
                 case 2 :
                 osszeg += 18000 * elteltnapok
+                szobatip = "Kétágyas, egy pótággyal"
                 break;
                 case 3 :
                 osszeg += 21000 * elteltnapok
+                szobatip = "Kétágyas, két pótággyal"
                 break;
             }
         }
@@ -118,17 +136,21 @@ function kalkulacio(){
 
 
     // Ellátás radio gombok ellenörzése
+    let ellatastip = "";
     for(let i = 0; i < document.getElementsByClassName("iradiok").length; i++){
         if(document.getElementsByClassName("iradiok")[i].checked){
             switch(i){
                 case 0:
                     osszeg += 900 * elteltnapok * vendegevek.length;
+                    ellatastip = "Reggeli"
                 break;
                 case 1:
                     osszeg += 2900 * elteltnapok * vendegevek.length;
+                    ellatastip = "Félpanzíó"
                 break;
                 case 2:
                     osszeg += 4900 * elteltnapok * vendegevek.length;
+                    ellatastip = "Teljes panzió"
                 break;
             }
         }
@@ -137,31 +159,51 @@ function kalkulacio(){
 
 
     // Szolgáltatások checkboxok
+    let szolgtip = ""
     for(let i = 0; i < document.getElementsByClassName("cbclass").length - 1; i++){
         if(document.getElementsByClassName("cbclass")[i].checked){
-            osszeg += 800;
+            switch(i){
+                case 0:
+                    osszeg += 800;
+                    szolgtip += "Beltéri medencék; "
+                break;
+                case 1:
+                    osszeg += 800;
+                    szolgtip += "Kültéri medencék; "
+                break;
+                case 2:
+                    osszeg += 800;
+                    szolgtip += "Szauna; "
+                break;
+            }
+
         }
     }
     if(document.getElementsByClassName("cbclass")[3].checked){
         osszeg += 2000;
+        szolgtip += "Teljes belépő; "
     }
     
+    if(szolgtip == ""){
+       szolgtip = "Nem igényelt" 
+    }
 
-
-    tajekoztatas();
+    tajekoztatas(osszeg,erkezes,tavozas,szobatip,vendegek,ellatastip,szolgtip,erkstring,tavstring);
 }
 
 
 
-
-
-
-
-
-function tajekoztatas(){
-    window.open();
+function tajekoztatas(osszeg,erkezes,tavozas,szobatip,vendegek,ellatastip,szolgtip,erkstring,tavstring){
+    let tajuzi = "Kedves Vendégünk!\n\n\nTájékoztatjuk a sikeres foglalásról.\n\n\n"
+    tajuzi += "\nÉrkezés: " + erkstring + "\nTávozás: " + tavstring
+    tajuzi += "\nSzoba típusa: " + szobatip
+    tajuzi += "\nVendégek száma: " + vendegek
+    tajuzi += "\nEllátás: " + ellatastip
+    tajuzi += "\nIgénylet szolgálatások: " + szolgtip
+    tajuzi += "\nTeljes összeg: " + osszeg + "Ft."
+    tajuzi += "\n\nKöszönjük megrendelését!"
+    alert(tajuzi)
 }
-
 
 
 
