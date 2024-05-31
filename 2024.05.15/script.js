@@ -57,6 +57,10 @@ function vizsgalas(){
         hibauzi += "\nKérlek reális dátumot adj meg!"
         vanehiba = true;
     }
+    else if(tavozas == erkezes){
+        hibauzi += "\nEgy napnál kevesebbet nem lehet igényelni!"
+        vanehiba = true;
+    }
 
     if(!document.getElementsByClassName("tradiok")[0].checked && !document.getElementsByClassName("tradiok")[1].checked && !document.getElementsByClassName("tradiok")[2].checked && !document.getElementsByClassName("tradiok")[3].checked){
         hibauzi += "\nKérlek válassz egy szoba típust is!"
@@ -188,12 +192,12 @@ function kalkulacio(vendegek){
        szolgtip = "Nem igényelt" 
     }
 
-    tajekoztatas(osszeg,erkezes,tavozas,szobatip,vendegek,ellatastip,szolgtip,erkstring,tavstring);
+    tajekoztatas(osszeg,szobatip,vendegek,ellatastip,szolgtip,erkstring,tavstring);
 }
 
 
 
-function tajekoztatas(osszeg,erkezes,tavozas,szobatip,vendegek,ellatastip,szolgtip,erkstring,tavstring){
+function tajekoztatas(osszeg,szobatip,vendegek,ellatastip,szolgtip,erkstring,tavstring){
     let tajuzi = "Kedves Vendégünk!\n\n\nTájékoztatjuk a sikeres foglalásról.\n\n\n"
     tajuzi += "\nÉrkezés: " + erkstring + "\nTávozás: " + tavstring
     tajuzi += "\nSzoba típusa: " + szobatip
@@ -210,8 +214,26 @@ function tajekoztatas(osszeg,erkezes,tavozas,szobatip,vendegek,ellatastip,szolgt
 
 
 
+//Uncsi kizárásos fügvény, amit nem tudtam hogyan oldjak meg ciklussal, szóval egyesével tettem
 
 
+function teljesbelepo(){
+    if(document.getElementsByClassName("cbclass")[3].checked)
+    {
+        document.getElementsByClassName("cbclass")[0].disabled = true;
+        document.getElementsByClassName("cbclass")[0].checked = false;
+        document.getElementsByClassName("cbclass")[1].disabled = true;
+        document.getElementsByClassName("cbclass")[1].checked = false;
+        document.getElementsByClassName("cbclass")[2].disabled = true;
+        document.getElementsByClassName("cbclass")[2].checked = false;
+    }
+    else
+    {
+        document.getElementsByClassName("cbclass")[0].disabled = false;
+        document.getElementsByClassName("cbclass")[1].disabled = false;
+        document.getElementsByClassName("cbclass")[2].disabled = false;
+    }
+}
 
 function fovaltozas(){
     let fo = document.getElementById("fonumberdiv").value;

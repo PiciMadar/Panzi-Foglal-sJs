@@ -77,7 +77,7 @@
             <hr>
             <div class="szolgaltatasokDiv flexdiv">
                 <div class="labeldiv kozeplabel">
-                    <label for="">Fürdő szolgáltatások:</label>
+                    <label for="" id="furdoszolglabel">Fürdő szolgáltatások:</label>
                 </div>
                 <div class="inputdiv">
                     <input type="checkbox" name="cb0" id="cb0id" class="cbclass">
@@ -86,7 +86,7 @@
                     <label for="cb0">Kültéri medencék - 800 Ft/nap/fő</label><br>
                     <input type="checkbox" name="cb2" id="cb2id" class="cbclass">
                     <label for="cb0">Szauna belépő - 800 Ft/nap/fő</label><br>
-                    <input type="checkbox" name="cb3" id="cb3id" class="cbclass">
+                    <input type="checkbox" name="cb3" id="cb3id" class="cbclass" oninput="teljesbelepo()">
                     <label for="cb0">Teljes belépő - 2.000 Ft/nap/fő</label><br>
                 </div>
             </div>
