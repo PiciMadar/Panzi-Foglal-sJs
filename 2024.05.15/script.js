@@ -54,21 +54,21 @@ function vizsgalas(){
 
 
     if(erkezes > tavozas){
-        hibauzi += "\nKérlek reális dátumot adj meg!"
+        hibauzi += "\nKérlek reális dátumot adj meg! 😘"
         vanehiba = true;
     }
     else if(tavozas == erkezes){
-        hibauzi += "\nEgy napnál kevesebbet nem lehet igényelni!"
+        hibauzi += "\nEgy napnál kevesebbet nem lehet igényelni!👌"
         vanehiba = true;
     }
 
     if(!document.getElementsByClassName("tradiok")[0].checked && !document.getElementsByClassName("tradiok")[1].checked && !document.getElementsByClassName("tradiok")[2].checked && !document.getElementsByClassName("tradiok")[3].checked){
-        hibauzi += "\nKérlek válassz egy szoba típust is!"
+        hibauzi += "\nKérlek válassz egy szoba típust is! 💅 "
         vanehiba = true;
     }
 
     if(!document.getElementsByClassName("iradiok")[0].checked && !document.getElementsByClassName("iradiok")[1].checked && !document.getElementsByClassName("iradiok")[2].checked){
-        hibauzi += "\nKérlek válassz legalább egy ellátást!"
+        hibauzi += "\nKérlek válassz legalább egy ellátást! ✨"
         vanehiba = true;
     }
 
